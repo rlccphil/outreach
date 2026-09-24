@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#365233">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Outreach Ministry</title>
+<link rel="icon" href="logo.png">
+<style>
+:root{--brand:#365233;--dark:#294126;--soft:#e9f0e7;--ink:#172019;--mut:#66705f;--line:#dfe5dd;--bg:#f5f7f4;--good:#2f7a3d;--red:#8c4038;--redbg:#f8e7e5;--amber:#805900;--amberbg:#fff1cf}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding-bottom:env(safe-area-inset-bottom)}
+button,input{font:inherit}button{cursor:pointer}
+:focus-visible{outline:3px solid #7fae78;outline-offset:2px}
+.top{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid var(--line);padding:calc(8px + env(safe-area-inset-top)) 14px 8px;display:flex;align-items:center;gap:10px}
+.logo{height:34px;max-width:55%;object-fit:contain;object-position:left}
+.sp{flex:1}
+.ibtn{min-height:44px;min-width:44px;border:1px solid var(--line);background:#fff;border-radius:12px;padding:0 12px;color:var(--brand);font-weight:700}
+.ibtn:active{background:var(--soft)}.ibtn[disabled]{opacity:.5}
+main{max-width:1100px;margin:0 auto;padding:18px 14px 48px}
+h1{margin:0;font-size:26px;line-height:1.15;color:var(--brand)}
+h2,h3{margin:0;line-height:1.25}
+.sub{color:var(--mut);font-size:13px;margin-top:4px}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:14px 0}
+.stat b{display:block;font-size:28px;line-height:1.1;color:var(--brand)}
+.stat span{font-size:13px;font-weight:600}
+.stat small{display:block;color:var(--mut);font-size:12px;line-height:1.35;margin-top:3px}
+.assess h2{font-size:26px;color:var(--brand);margin:4px 0 6px}
+.assess p{margin:0;color:var(--mut);font-size:14px}
+.lbl{font-size:13px;font-weight:700;color:var(--mut)}
+.grid{display:grid;gap:12px;grid-template-columns:1fr}
+.sec{margin-top:26px}
+.sec>h2{font-size:19px;color:var(--brand)}
+.intro{margin:4px 0 12px;color:var(--mut);font-size:13px}
+.li{display:flex;gap:10px;margin:0 0 12px;font-size:14px}
+.li:last-child{margin:0}
+.dot{flex:none;width:22px;height:22px;border-radius:50%;background:var(--soft);color:var(--brand);display:grid;place-items:center;font-size:12px;font-weight:800;margin-top:1px}
+.groups{display:grid;gap:10px;grid-template-columns:1fr 1fr}
+.group{border:1px solid var(--line);border-radius:12px;padding:12px;background:#fbfcfa}
+.group.on{border-color:#a9c2a4;background:#f3f8f2}
+.group b{display:block;font-size:14px;color:var(--brand);line-height:1.25}
+.group small{display:block;color:var(--mut);font-size:12px;line-height:1.4;margin-top:4px}
+.group .v{font-weight:800;font-size:15px;margin-top:8px}
+.group .off{color:var(--mut);font-weight:600}
+.quality{border-top:1px solid var(--line);margin-top:14px;padding-top:10px;color:var(--mut);font-size:12px}
+.item{border:1px solid var(--line);border-left:5px solid var(--brand);border-radius:12px;padding:14px;background:#fff;margin-bottom:10px}
+.item.high{border-left-color:var(--red)}.item.medium{border-left-color:var(--amber)}
+.head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.head b{font-size:15px;line-height:1.35}
+.tagx{flex:none;border-radius:99px;padding:2px 9px;font-size:11px;font-weight:800;background:var(--soft);color:var(--brand)}
+.tagx.high{background:var(--redbg);color:var(--red)}.tagx.medium{background:var(--amberbg);color:var(--amber)}
+.item p{margin:8px 0 0;font-size:14px}
+.item p span{font-weight:700;color:var(--brand)}
+.item .why{color:var(--mut);font-size:13px}
+details{border:1px solid var(--line);border-radius:12px;background:#fff}
+summary{cursor:pointer;min-height:48px;display:flex;align-items:center;padding:0 14px;font-weight:700;color:var(--brand)}
+.qs{padding:0 14px 8px}
+.q{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line);font-size:14px}
+.q small{display:block;color:var(--mut);font-size:12px}
+.bar{height:8px;border-radius:99px;background:#e4eae2;overflow:hidden;margin:8px 0 6px}.bar i{display:block;height:100%;background:var(--brand);border-radius:99px}
+.foot{text-align:center;color:var(--mut);font-size:12px;margin-top:26px}
+.center{text-align:center;color:var(--mut);padding:48px 12px}
+.spin{width:28px;height:28px;border:3px solid var(--line);border-top-color:var(--brand);border-radius:50%;margin:0 auto 12px;animation:sp .8s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+.err{background:#faeeee;border:1px solid #edc9c9;color:#7b2b2b;border-radius:14px;padding:16px;white-space:pre-line}
+.btn{min-height:46px;border:0;border-radius:12px;padding:0 20px;background:var(--brand);color:#fff;font-weight:700}
+.btn:active{background:var(--dark)}
+input[type=password]{width:100%;min-height:46px;border:1px solid var(--line);border-radius:12px;padding:0 14px;background:#fff}
+.gate{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px}
+.gate[hidden]{display:none}
+.gate form{width:100%;max-width:380px;display:grid;gap:12px}
+.gate img{height:44px;object-fit:contain;object-position:left}
+.warn{background:var(--amberbg);color:#5f4610;border-radius:12px;padding:10px 12px;font-size:13px}
+.warn[hidden]{display:none}
+@media(min-width:700px){
+ .top{padding-left:28px;padding-right:28px}
+ main{padding:26px 28px 64px}
+ .stats{grid-template-columns:repeat(4,1fr)}
+ .grid.two{grid-template-columns:minmax(260px,.9fr) 1.4fr}
+ .groups{grid-template-columns:repeat(3,1fr)}
+ .cols{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+}
+@media(prefers-reduced-motion:reduce){.spin{animation-duration:2s}}
+</style>
+</head>
+<body>
+<header class="top">
+  <img class="logo" src="logo.png" alt="Real Life Christian Communities">
+  <span class="sp"></span>
+  <button class="ibtn" id="lock" type="button">Lock</button>
+  <button class="ibtn" id="refresh" type="button" aria-label="Refresh data">Refresh</button>
+</header>
+<main id="app"><div class="center"><div class="spin"></div>Loading…</div></main>
+
+<div class="gate" id="gate" hidden>
+  <form id="gateForm">
+    <img src="logo.png" alt="">
+    <h2>Outreach Ministry</h2>
+    <p style="margin:0;color:var(--mut)">Enter the access code to view the dashboard.</p>
+    <input type="password" id="code" placeholder="Access code" autocomplete="current-password" required>
+    <div id="gateErr" class="warn" hidden></div>
+    <button class="btn" type="submit">Open dashboard</button>
+  </form>
+</div>
+
+<script>
+// Paste the Web app URL from Apps Script (Deploy > Manage deployments) between the quotes.
+const API_URL = 'PASTE_YOUR_APPS_SCRIPT_WEB_APP_URL_HERE';
+
+const K = {code: 'rlcc-od-code', data: 'rlcc-od-v1'};
+const $ = s => document.querySelector(s);
+const esc = v => String(v == null ? '' : v).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = n => n == null || n === '' ? '—' : Number(n).toLocaleString('en-US');
+const store = {
+  get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } },
+  set(k,v){ try { localStorage.setItem(k,v); } catch(e){} },
+  del(k){ try { localStorage.removeItem(k); } catch(e){} }
+};
+let data = null, reqId = 0;
+
+async function api(action) {
+  const res = await fetch(API_URL, {
+    method: 'POST',
+    headers: {'Content-Type': 'text/plain;charset=utf-8'},
+    body: JSON.stringify({action, code: store.get(K.code) || ''})
+  });
+  const j = await res.json();
+  if (!j.ok) { const e = new Error(j.error || 'Request failed.'); e.code = j.code; throw e; }
+  return j.data;
+}
+
+function showGate(msg) {
+  $('#gate').hidden = false;
+  const g = $('#gateErr'); g.hidden = !msg; g.textContent = msg || '';
+  $('#code').focus();
+}
+
+function fail(e) {
+  $('#refresh').disabled = false;
+  if (e.code === 'AUTH' || e.code === 'LOCKED') { store.del(K.code); showGate(e.message); return; }
+  const setup = /PASTE_YOUR/.test(API_URL);
+  $('#app').innerHTML = `<div class="err"><b>${setup ? 'Add your Web app URL' : 'Could not load the dashboard'}</b>\n${esc(setup ? 'Open index.html and paste your Apps Script Web app URL into API_URL.' : e.message || e)}${setup ? '' : '<p><button class="btn" onclick="load()">Try again</button></p>'}</div>`;
+}
+
+async function load() {
+  if (/PASTE_YOUR/.test(API_URL)) return fail(new Error('setup'));
+  if (!store.get(K.code)) return showGate();
+  $('#gate').hidden = true;
+  const id = ++reqId;
+  if (!data) {
+    try { data = JSON.parse(store.get(K.data)); } catch(e){}
+    if (data) render(true);
+  }
+  $('#refresh').disabled = true;
+  try {
+    const d = await api('dashboard');
+    if (id !== reqId) return;
+    data = d; store.set(K.data, JSON.stringify(d));
+    $('#refresh').disabled = false; render(false);
+  } catch (e) {
+    if (id !== reqId) return;
+    if (!data || e.code === 'AUTH' || e.code === 'LOCKED') fail(e);
+    else { $('#refresh').disabled = false; render(false, e.message); }
+  }
+}
+
+function render(stale, problem) {
+  const d = data, p = d.pipeline, ev = d.evaluation, st = p.stages;
+  const sev = s => String(s || 'watch').toLowerCase();
+  const stat = (v, l, n) => `<div class="card stat"><b>${fmt(v)}</b><span>${esc(l)}</span><small>${esc(n)}</small></div>`;
+  const list = (items, icon, empty) => items && items.length ? items.map(t => `<div class="li"><span class="dot">${icon}</span><div>${esc(t)}</div></div>`).join('') : `<div class="intro">${empty}</div>`;
+  const max = Math.max(1, ...p.definitions.map(x => Number(st[x.key].reportedPeople) || 0));
+  const stages = p.definitions.map((x, i) => { const s = st[x.key], v = Number(s.reportedPeople) || 0;
+    return `<div class="group on"><b>${i + 1}. ${esc(s.label)}</b><small>${esc(s.description)}</small>
+    <div class="v">${fmt(v)} <span class="off" style="font-size:12px">reported</span></div>
+    <div class="bar"><i style="width:${Math.round(v / max * 100)}%"></i></div>
+    <small>${fmt(s.responsesWithAnswers)} report${s.responsesWithAnswers === 1 ? '' : 's'} with an answer</small></div>`; }).join('');
+  const conc = ev.concerns && ev.concerns.length ? ev.concerns.map(x => `<div class="item ${sev(x.severity)}"><div class="head"><b>${esc(x.title)}</b><span class="tagx ${sev(x.severity)}">${esc(x.severity)}</span></div>
+    <p><span>What the reports show:</span> ${esc(x.evidence)}</p><p><span>What it may mean:</span> ${esc(x.implication)}</p><p><span>What leaders should do:</span> ${esc(x.action)}</p></div>`).join('') : '<div class="intro">No specific concerns were detected from the current reporting.</div>';
+  const recs = (ev.pastoralRecommendations || []).map(x => `<div class="item"><div class="head"><b>${esc(x.title)}</b><span class="tagx ${sev(x.priority)}">${esc(x.priority)}</span></div>
+    <p><span>Action:</span> ${esc(x.action)}</p><p class="why"><span>Why:</span> ${esc(x.why)}</p></div>`).join('');
+  const qs = d.questions.map(q => `<div class="q"><span class="dot">${q.number}</span><div>${esc(q.label)}<small>${esc(q.type)} · ${q.required ? 'Required' : 'Optional'}</small></div></div>`).join('');
+
+  $('#app').innerHTML = `
+  <h1>Outreach Ministry</h1>
+  <div class="sub">Real Life Christian Communities · Planning Center · Updated ${esc(d.generatedAt)}${stale ? ' · refreshing…' : ''}</div>
+  ${problem ? `<div class="warn" style="margin-top:10px">Showing saved data. Could not refresh: ${esc(problem)}</div>` : ''}
+  <div class="stats">${stat(d.submissions, 'Reports submitted', 'People who submitted the Outreach Ministry report')}${stat(st.reach.reportedPeople, 'People being reached', 'Reported people in the first outreach stage')}${stat(st.starting.reportedPeople + st.ongoing.reportedPeople, 'In Bible Study', 'Reported people starting or continuing a Bible Study')}${stat(st.assimilating.reportedPeople + st.assimilated.reportedPeople, 'In community', 'Reported people being connected or already connected')}</div>
+  <section class="grid two"><div class="card assess"><div class="lbl">Current ministry assessment</div><h2>${esc(ev.status)}</h2><p>${esc(ev.description)}</p>
+    <p style="margin-top:12px"><b style="color:var(--brand);font-size:22px">${fmt(ev.activeStages)}</b> of ${p.definitions.length} pathway stages showing activity</p></div>
+    <div class="card"><h3>What the responses are telling us</h3><p class="intro">The form follows a pathway: reaching people, Bible Study, baptism and community.</p>
+    <div class="cols"><div><div class="lbl" style="margin-bottom:8px">Encouraging</div>${list(ev.strengths, '✓', 'No summary yet.')}</div><div><div class="lbl" style="margin:12px 0 8px">Priority opportunities</div>${list(ev.priorities, '→', 'No summary yet.')}</div></div></div></section>
+  <section class="sec"><h2>Concerns leaders should not ignore</h2><p class="intro">These are signals, not proof. Verify them, pray over them and follow up personally.</p>${conc}</section>
+  <section class="sec"><h2>Recommendations for pastoral staff</h2><p class="intro">Suggested actions that turn reporting into prayer, coaching and follow-up.</p><div class="cols">${recs}</div></section>
+  <section class="sec card"><h2>Outreach, discipleship and community</h2><p class="intro">Reported people at each stage. These come from free-text answers, so treat them as indicators, not audited headcounts.</p><div class="groups">${stages}</div><div class="quality">${esc(p.dataQuality.note)}</div></section>
+  <section class="sec"><details><summary>The ${d.questions.length} questions behind the dashboard</summary><div class="qs">${qs}</div></details></section>
+  <div class="foot">Source: “${esc(d.form.name)}” · Form ${esc(d.form.id)}</div>`;
+}
+
+$('#refresh').addEventListener('click', load);
+$('#lock').addEventListener('click', () => { store.del(K.code); data = null; $('#app').innerHTML = ''; showGate(); });
+$('#gateForm').addEventListener('submit', e => {
+  e.preventDefault(); store.set(K.code, $('#code').value.trim()); $('#code').value = '';
+  $('#app').innerHTML = '<div class="center"><div class="spin"></div>Loading…</div>'; load();
+});
+load();
+</script>
+</body>
+</html>
